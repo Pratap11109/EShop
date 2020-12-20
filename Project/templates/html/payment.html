@@ -1,0 +1,12 @@
+{% extends 'html/regi.html' %}
+{% block log %}
+<form method = 'POST'>
+{% csrf_token %}
+
+<h1>total payment : {{ order.totalpayment }}</h1>
+<img src='{{ order.OD.product.p_img.url }}' height=200>
+<input type='number' name='payp'>
+
+<input type='submit' value = 'Pay'>
+</form>
+{% endblock %}

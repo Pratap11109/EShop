@@ -1,0 +1,13 @@
+{% extends 'html/regi.html' %}
+{% block log %}
+<h1>{{ msg }}</h1>
+<form method = 'POST' >
+{% csrf_token %}
+<img src='{{ pro.p_img.url }}' height=200px >
+<h1> {{ pro.p_countity }} </h1>
+<input type='number' name='qut'  >
+<input type='submit'class="registerbtn" value ='submit'>
+
+</form>
+
+{% endblock %}

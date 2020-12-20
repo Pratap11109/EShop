@@ -1,0 +1,20 @@
+{% extends 'html/base.html' %}
+
+{% block body %}
+<div>
+<div class="text-center col container p-3 my-3 border" style="background-color:rgba(2, 196, 167, .4); font-size: 15px;"> 
+  
+<h1>{{ msg }}</h1>
+<form method = 'POST' enctype='multipart/form-data' >
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<input type='submit' value ='SAVE'>
+
+</form>
+<a href='{% url 'logout' %}'><button type='button' class='btn btn-sm btn-info col-lg-2' value='Logout'>Logout</button></a>
+</div>
+
+</div>
+{% endblock body %}

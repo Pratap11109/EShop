@@ -1,0 +1,23 @@
+{% extends 'html/base.html' %}
+
+{% block body %}
+<div class="container" >
+  <div class="jumbotron text-align-center"style="color:green ;justify-content: center;align-items: center;background-color:rgba(213, 219, 202, .8);">
+   <h1>Thank You</h1>
+   <h1>thankyou for orderring :{{ user.username }} {{ user.last_name }}</h1>
+<h1>remaning payment :{{ paym.payrem }}<br/> delivery Date {{ paym.order.deliverydate }}</h1>
+<h1>Order Date : {{ paym.order.OD.OrderDate }} <br/> city : {{ paym.order.add.city }}</h1>
+<a href='{% url 'logout' %}'><button type='button'class="btn btn-danger" value='Logout'>Logout</a>
+  </div>
+</div>
+
+
+{% endblock body %}
+
+
+
+
+
+
+
+<

@@ -1,0 +1,19 @@
+{% extends 'html/regi.html' %}
+{% block log %}
+
+<form method = 'POST' >
+
+{% csrf_token %}
+<lable>Addrese </lable>
+<input type='text' name='addrese' required>
+<lable> city Name</lable>
+<input type='text' name='city' required>
+<lable >zipcoe</lable>
+<input type='text' name='zipcode' required >
+
+<input type='submit' class="registerbtn" value='Submit'>
+
+
+</form>
+
+{% endblock log %}

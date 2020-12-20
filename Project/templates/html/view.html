@@ -1,0 +1,115 @@
+{% extends 'html/base.html' %}
+
+{% block body %}
+<h1>{{ msg }}</h1>
+<div class="row">
+  <div class="col-3">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="Mobile-tab" data-toggle="pill" href="#Mobile" role="tab" aria-controls="Mobile" aria-selected="true">Mobile</a>
+      <a class="nav-link" id="Electronic-tab" data-toggle="pill" href="#Electronic" role="tab" aria-controls="Electronic" aria-selected="false">Electronic</a>
+      <a class="nav-link" id="LapTop-tab" data-toggle="pill" href="#LapTop" role="tab" aria-controls="LapTop" aria-selected="false">LapTop</a>
+      <a class="nav-link" id="MansWear-tab" data-toggle="pill" href="#MansWear" role="tab" aria-controls="MansWear" aria-selected="false">MansWear</a>
+    </div>
+  </div>
+  <div class="col-9  ">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="Mobile" role="tabpanel" aria-labelledby="Mobile">
+     <div class="row m-4 p-2"> 
+    {% for p in mobile %}
+   <div class="col-lg-4 m-4" style="background-color:rgba(2, 196, 167, .4);"> 
+  <form action='{% url "chart" p.id  %}' method='GET'>
+   {% csrf_token %}
+      <h1> Product Name </h1>
+        {{ p.p_name }}
+         <h1> Product quntity </h1>
+        {{ p.p_countity }}
+        <h1> Product prize </h1>
+        {{ p.p_price }}
+        <h1> Product Feature </h1>
+        {{ p.p_dis }}
+        <h1> Product Image </h1>
+        <img src ='{{ p.p_img.url }}'  height ='150px' weidth='120px' >
+         <h1> Product Supplier </h1>
+        {{ p.Supplier }}
+        <button class='btn btn-lg btn-success' type='submit' value='ORDER'>ORDER</button>
+        </div>
+        </form>
+      
+      {% endfor %}
+     </div>
+     </div>
+      <div class="tab-pane fade" id="Electronic" role="tabpanel" aria-labelledby="Electronic">
+      {% for p in elec %}
+      <div class="col-lg-4" style="background-color:rgba(2, 196, 167, .4);"> 
+        <form action='{% url "chart" p.id  %}' method='GET'>
+         {% csrf_token %}
+            <h1> Product Name </h1>
+              {{ p.p_name }}
+               <h1> Product quntity </h1>
+              {{ p.p_countity }}
+              <h1> Product prize </h1>
+              {{ p.p_price }}
+              <h1> Product Feature </h1>
+              {{ p.p_dis }}
+              <h1> Product Image </h1>
+              <img src ='{{ p.p_img.url }}'  height ='150px' weidth='120px' >
+               <h1> Product Supplier </h1>
+              {{ p.Supplier }}
+              <button class='btn btn-lg btn-success' type='submit' value='ORDER'>ORDER</button>
+              </div>
+              </form>
+      {% endfor %}
+      </div>
+      <div class="tab-pane fade" id="LapTop" role="tabpanel" aria-labelledby="LapTop">
+    
+    {% for p in lt %}
+    <div class="col-lg-4" style="background-color:rgba(2, 196, 167, .4);"> 
+      <form action='{% url "chart" p.id  %}' method='GET'>
+       {% csrf_token %}
+          <h1> Product Name </h1>
+            {{ p.p_name }}
+             <h1> Product quntity </h1>
+            {{ p.p_countity }}
+            <h1> Product prize </h1>
+            {{ p.p_price }}
+            <h1> Product Feature </h1>
+            {{ p.p_dis }}
+            <h1> Product Image </h1>
+            <img src ='{{ p.p_img.url }}'  height ='150px' weidth='120px' >
+             <h1> Product Supplier </h1>
+            {{ p.Supplier }}
+            <button class='btn btn-lg btn-success' type='submit' value='ORDER'>ORDER</button>
+            </div>
+            </form>
+   
+     {% endfor %} 
+      </div>
+      <div class="tab-pane fade" id="MansWear" role="tabpanel" aria-labelledby="MansWear">
+        {% for p in mw %}
+        <div class="col-lg-4" style="background-color:rgba(2, 196, 167, .4);"> 
+          <form action='{% url "chart" p.id  %}' method='GET'>
+           {% csrf_token %}
+              <h1> Product Name </h1>
+                {{ p.p_name }}
+                 <h1> Product quntity </h1>
+                {{ p.p_countity }}
+                <h1> Product prize </h1>
+                {{ p.p_price }}
+                <h1> Product Feature </h1>
+                {{ p.p_dis }}
+                <h1> Product Image </h1>
+                <img src ='{{ p.p_img.url }}'  height ='150px' weidth='120px' >
+                 <h1> Product Supplier </h1>
+                {{ p.Supplier }}
+                <button class='btn btn-lg btn-success' type='submit' value='ORDER'>ORDER</button>
+                </div>
+                </form>
+   
+      {% endfor %}
+      
+    </div>
+  </div>
+</div>
+ 
+{% endblock body %}
+

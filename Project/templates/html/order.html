@@ -1,0 +1,15 @@
+{% extends 'html/regi.html' %}
+{% block log %}
+<form method='POST'>
+{% csrf_token %}
+
+<h1> Total amount = {{ payment }}</h1>
+<h1> delivery Date = {{ dd }}</h1>
+<img src='{{ od.product.p_img.url }}' heigth = 400px width=400px >
+ <h1> City :{{ ad.city }}</h1>
+ <h1> ZipCode :{{ ad.zipcode }}</h1>
+ <h1> Addrese :{{ ad.Addrese }}</h1>
+<input type='submit' class="registerbtn" value='confirm order'>
+</form>
+
+{% endblock log %}
